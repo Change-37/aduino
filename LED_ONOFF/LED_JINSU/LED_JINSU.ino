@@ -1,38 +1,82 @@
+#define A 9
+#define B 10
+#define C 11
+#define D 12
+
+
 void setup() {
-  for (byte i = 13; i >= 10; i--){
+  for (byte i = D; i >= A; i--){
     pinMode(i, OUTPUT);
   }
 }
 
 void loop() {
-  for (byte num = 0; num>16; num++){
-    if(num / 1){ 
-      digitalWrite(13,HIGH);
-    }
-    else{
-      digitalWrite(13,LOW);
-    }
-    
-    if(num / 2){ 
-      digitalWrite(12,HIGH);
-      }
-    else{
-      digitalWrite(12,LOW);
-    }
-    
-    if(num / 4){ 
-      digitalWrite(11,HIGH);
-      }
-    else{
-      digitalWrite(11,LOW);
-    }
-    
+  for (byte num = 0; num>16; num++){    
     if(num / 8){ 
-      digitalWrite(10,HIGH);
+      digitalWrite(A,HIGH);
+        if(num / 4){ 
+          digitalWrite(B,HIGH);
+          if(num / 2){ 
+            digitalWrite(C,HIGH);
+            if(num / 1){digitalWrite(D,HIGH);}
+            else{digitalWrite(D,LOW);}
+          }
+          else{
+            digitalWrite(C,LOW);
+            if(num / 1){digitalWrite(D,HIGH);}
+            else{digitalWrite(D,LOW);}
+          }
+        }
+        else{
+          digitalWrite(B,LOW);
+          if(num / 2){ 
+            digitalWrite(C,HIGH);
+            if(num / 1){digitalWrite(D,HIGH);}
+            else{digitalWrite(D,LOW);}
+          }
+          else{
+            digitalWrite(C,LOW);
+            if(num / 1){digitalWrite(D,HIGH);}
+            else{digitalWrite(D,LOW);}
+          }
+        }
       }
-    else{
-      digitalWrite(10,LOW);
-    }
+      
+      
+      
+      
+      
+      else{
+        digitalWrite(A,LOW);
+        if(num / 4){
+          digitalWrite(B,HIGH);
+          if(num / 2){
+            digitalWrite(C,HIGH);
+            if(num / 1){digitalWrite(D,HIGH);}
+            else{digitalWrite(D,LOW);}
+          }
+          else{
+            digitalWrite(C,LOW);
+            if(num / 1){digitalWrite(D,HIGH);}
+            else{digitalWrite(D,LOW);}
+          }
+        }
+        else{
+          digitalWrite(B,LOW);
+          if(num / 2){
+            digitalWrite(C,HIGH);
+            if(num / 1){digitalWrite(D,HIGH);}
+            else{digitalWrite(D,LOW);}
+          }
+          else{
+            digitalWrite(C,LOW);
+            if(num / 1){digitalWrite(D,HIGH);}
+            else{digitalWrite(D,LOW);}
+          }
+        }
+      }
+    
+
 
     delay(1000);
   }
