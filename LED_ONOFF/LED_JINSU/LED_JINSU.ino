@@ -5,38 +5,47 @@
 
 
 void setup() {
-  for (byte i = D; i >= A; i--){
-    pinMode(i, OUTPUT);
-  }
+  pinMode(A, OUTPUT);
+  pinMode(B, OUTPUT);
+  pinMode(C, OUTPUT);
+  pinMode(D, OUTPUT);
 }
 
 void loop() {
+  byte n;
   for (byte num = 0; num>16; num++){    
     if(num / 8){ 
+      n = num%8;
       digitalWrite(A,HIGH);
-        if(num / 4){ 
+        if(n / 4){
+          n %= 4; 
           digitalWrite(B,HIGH);
-          if(num / 2){ 
+          if(n / 2){ 
+            n %= 2;
             digitalWrite(C,HIGH);
-            if(num / 1){digitalWrite(D,HIGH);}
+            if(n / 1){digitalWrite(D,HIGH);}
             else{digitalWrite(D,LOW);}
           }
           else{
+            n %= 2;
             digitalWrite(C,LOW);
-            if(num / 1){digitalWrite(D,HIGH);}
+            if(n / 1){digitalWrite(D,HIGH);}
             else{digitalWrite(D,LOW);}
           }
         }
         else{
+          n %= 4;
           digitalWrite(B,LOW);
-          if(num / 2){ 
+          if(n / 2){ 
+            n %= 2;
             digitalWrite(C,HIGH);
-            if(num / 1){digitalWrite(D,HIGH);}
+            if(n / 1){digitalWrite(D,HIGH);}
             else{digitalWrite(D,LOW);}
           }
           else{
+            n %= 2;
             digitalWrite(C,LOW);
-            if(num / 1){digitalWrite(D,HIGH);}
+            if(n / 1){digitalWrite(D,HIGH);}
             else{digitalWrite(D,LOW);}
           }
         }
@@ -47,30 +56,37 @@ void loop() {
       
       
       else{
+        n = num % 8;
         digitalWrite(A,LOW);
-        if(num / 4){
+        if(n / 4){
+          n %= 4;
           digitalWrite(B,HIGH);
-          if(num / 2){
+          if(n / 2){
+            n %= 2;
             digitalWrite(C,HIGH);
-            if(num / 1){digitalWrite(D,HIGH);}
+            if(n / 1){digitalWrite(D,HIGH);}
             else{digitalWrite(D,LOW);}
           }
           else{
+            n %= 2;
             digitalWrite(C,LOW);
-            if(num / 1){digitalWrite(D,HIGH);}
+            if(n / 1){digitalWrite(D,HIGH);}
             else{digitalWrite(D,LOW);}
           }
         }
         else{
+          n %= 4;
           digitalWrite(B,LOW);
-          if(num / 2){
+          if(n / 2){
+            n %= 2;
             digitalWrite(C,HIGH);
-            if(num / 1){digitalWrite(D,HIGH);}
+            if(n / 1){digitalWrite(D,HIGH);}
             else{digitalWrite(D,LOW);}
           }
           else{
+            n %= 2;
             digitalWrite(C,LOW);
-            if(num / 1){digitalWrite(D,HIGH);}
+            if(n / 1){digitalWrite(D,HIGH);}
             else{digitalWrite(D,LOW);}
           }
         }
