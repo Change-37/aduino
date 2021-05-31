@@ -5,7 +5,7 @@ void setup() {
   Serial.println("Write data : ");
   Serial.write('A');
   Serial.write('\n');
-  Serial.write(65);
+  Serial.write(1);
   Serial.write('\n');
   Serial.write("Hello");
   Serial.write('\n');
