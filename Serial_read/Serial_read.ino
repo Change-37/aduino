@@ -3,6 +3,9 @@ void setup() {
 }
 
 void loop() {
-  if(Serial.available())
-    Serial.write(Serial.read());
+  char a;
+  if(Serial.available()){
+    a = Serial.read();
+    Serial.write(a);
+  }
 }
