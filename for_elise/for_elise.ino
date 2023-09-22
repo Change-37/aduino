@@ -1,4 +1,4 @@
-#define PIEZO 8 // 피에조 부저
+#define PIEZO 4 // 피에조 부저
 
 
 
